@@ -13,13 +13,17 @@
             </div>
         </div>
         <div class="event-box">
-            <EventCard
+            <event-card
                     :event="event"
                     :key="event.id"
                     :day-date="day.date"
                     :is-day-selected="isDaySelected"
                     v-for="event in day.events">
-            </EventCard>
+            </event-card>
+            <add-event-form
+                    :day="day"
+                    :show="showAddEvent"
+            ></add-event-form>
         </div>
     </div>
 </template>
@@ -29,11 +33,13 @@
     export default {
         data () {
             return {
-                isDaySelected: false
+                isDaySelected: false,
+                showAddEvent:  false,
             }
         },
         components: {
             'EventCard' : require('./EventCard.vue'),
+            'AddEventForm': require('./AddEventForm.vue'),
         },
         props:{
             day: {
@@ -65,8 +71,7 @@
                 }
             },
             showAddEventForm(){
-                // TODO: Implement add event form
-                alert('Can you help implementing this?');
+                this.showAddEvent = true;
             }
         }
     }

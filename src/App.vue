@@ -1,8 +1,10 @@
 <template>
     <div id="app">
         <calendar
-                :first-day="1"
-                :all-events="events"
+            :first-day="1"
+            :all-events="events"
+            @VBC_EVENT_ADDED="handleEventAdded"
+            @VBC_EVENT_DELETED="handleEventDeleted"
         ></calendar>
     </div>
 </template>
@@ -19,6 +21,14 @@
         components: {
             Calendar
         },
+        methods: {
+            handleEventAdded(eventData) {
+                this.events.push(eventData);
+            },
+            handleEventDeleted(eventData) {
+
+            },
+        },
         mounted() {
             let me = this;
             setTimeout(function () {
@@ -27,24 +37,28 @@
                         id:1,
                         title:'Event 1',
                         color: 'panel-danger',
+                        description: 'Some fancy details for the event',
                         date: new Date()
                     },
                     {
                         id:2,
                         title:'Event blaa on same day!',
                         color: 'panel-default',
+                        description: 'Please bring some doughnuts',
                         date: new Date()
                     },
                     {
                         id:3,
                         title:'Event 2',
                         color: 'panel-primary',
+                        description: 'Don\'t forget about this!',
                         date: new Date(new Date().setHours(new Date().getHours() + 2*24)) // add 2 days
                     },
                     {
                         id:4,
                         title:'Event 3',
                         color: 'panel-success',
+                        description: 'Feel free to bring anyone with you',
                         date: new Date(new Date().setHours(new Date().getHours() + 5*24)) // add 5 days
                     },
                     {
@@ -57,6 +71,7 @@
                         id:6,
                         title:'Event 5',
                         color: 'panel-success',
+                        description: 'Laptop required',
                         date: new Date(new Date().setHours(new Date().getHours() + 30*24)) // add 1 month
                     },
 

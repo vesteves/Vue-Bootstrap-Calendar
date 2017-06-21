@@ -9,4 +9,12 @@ export default {
 		'add_event': "Event hinzufügen",
 		'select_language': "Sprache Auswählen",
 	},
+    "color": {
+        'grey': "Grau",
+        'blue': "Blau",
+        'lightblue': "Hellblau",
+        'green': "Grün",
+        'orange': "Orange",
+        'red': "Rot",
+    },
 }

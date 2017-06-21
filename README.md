@@ -103,6 +103,11 @@ new Vue({
 });
 ```
 
+## For Developers
+
+Use `npm run dev` to further develop this package.
+Once you are done, use `npm run build` to build all dist files.
+
 ## Copyright and License
 
 [Vue-Bootstrap-Calendar](https://github.com/EazyServer/Vue-Bootstrap-Calendar) was written by [Yarob Al-Taay](https://twitter.com/TheEpicVoyage) and is released under the 
